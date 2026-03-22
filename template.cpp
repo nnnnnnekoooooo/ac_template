@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+#if __has_include(<atcoder/all>)
+#include <atcoder/all>
+using namespace atcoder;
+#endif
+using ll = long long;
+using ull = unsigned long long;
+#define Yes cout << "Yes" << "\n"
+#define No cout << "No" << "\n"
+#define YES cout << "YES" << "\n"
+#define NO cout << "NO" << "\n"
+#define vll vector<ll>
+#define vvll vector<vector<ll>>
+#define el "\n"
+#define rep(i,n) for(ll i=0;i<(ll)n;++i)
+#define REP(i,n) for(ll i=0;i<=(ll)n;++i)
+#define rrep(i,n) for(ll i=n-1;i>=0;--i)
+#define RREP(i,n) for(ll i=n;i>=0;--i)
+#define let(n) ll n;cin>>n
+#define letv(V,n) vll V(n);rep(i,n){cin>>V[i];}
+#define tlet(type,n) type n;cin>>n
+#define extenddigit setprecision(15)
+#define vc vector
+#define str string
+#define printv(V,c) for(auto it=V.begin();it!=V.end();it++){if(next(it)!=V.end())cout<<*it<<c;else cout<<*it;}cout<<el
+#define vcall(v) v.begin(),v.end()
+#define vcrall(v) v.rbegin(),v.rend()
+#define pll pair<ll,ll>
+
+const double pi = 3.141592653589793238;
+const int inf = 1073741823;
+const ll infl = 1LL << 60;
+const string ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const string abc = "abcdefghijklmnopqrstuvwxyz";
+const int dx4[4] = {1,0,-1, 0};
+const int dy4[4] = {0,1, 0,-1};
+const int dx8[8] = {1,1,0,-1,-1,-1, 0, 1};
+const int dy8[8] = {0,1,1, 1, 0,-1,-1,-1};
+template<typename T> bool chmin(T& a, T b){if(a > b){a = b; return true;} return false;}
+template<typename T> bool chmax(T& a, T b){if(a < b){a = b; return true;} return false;}
+
+int main(){
+
+
+    
+    return 0;
+}
