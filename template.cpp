@@ -27,7 +27,7 @@ using ull = unsigned long long;
 #define vcall(v) v.begin(),v.end()
 #define vcrall(v) v.rbegin(),v.rend()
 #define pll pair<ll,ll>
-#define bye(a) cout<<a<<el;return 0;
+#define bye(a) {cout<<a<<el;return 0;}
 
 const double pi = 3.141592653589793238;
 const int inf = 1073741823;
