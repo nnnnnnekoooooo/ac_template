@@ -40,6 +40,7 @@ const int dx8[8] = {1,1,0,-1,-1,-1, 0, 1};
 const int dy8[8] = {0,1,1, 1, 0,-1,-1,-1};
 template<typename T> bool chmin(T& a, T b){if(a > b){a = b; return true;} return false;}
 template<typename T> bool chmax(T& a, T b){if(a < b){a = b; return true;} return false;}
+bool is_out_field(ll i,ll j,ll H,ll W){return (i<0)||(H<=i)||(j<0)||(W<=j);}
 
 int main(){
 
