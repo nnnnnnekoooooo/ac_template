@@ -17,6 +17,7 @@ using ull = unsigned long long;
 #define REP(i,n) for(ll i=0;i<=(ll)n;++i)
 #define rrep(i,n) for(ll i=n-1;i>=0;--i)
 #define RREP(i,n) for(ll i=n;i>=0;--i)
+#define hrep(i,b,e) for(ll i=b;i!=e;(b<e? i++:i--))             //[b,e] or [e,b]の間をforループ
 #define let(n) ll n;cin>>n
 #define letv(V,n) vll V(n);rep(i,n){cin>>V[i];}
 #define tlet(type,n) type n;cin>>n
@@ -45,6 +46,5 @@ bool is_out_field(ll i,ll j,ll H,ll W){return (i<0)||(H<=i)||(j<0)||(W<=j);}
 int main(){
 
 
-    
     return 0;
 }
