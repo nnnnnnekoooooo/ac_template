@@ -10,6 +10,7 @@ using ull = unsigned long long;
 #define No cout << "No" << "\n"
 #define YES cout << "YES" << "\n"
 #define NO cout << "NO" << "\n"
+#define YN {cout<<"Yes\n";}else{cout<<"No\n";}
 #define vll vector<ll>
 #define vvll vector<vector<ll>>
 #define el "\n"
