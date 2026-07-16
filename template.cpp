@@ -14,8 +14,8 @@ using ull = unsigned long long;
 #define vll vector<ll>
 #define vvll vector<vector<ll>>
 #define el "\n"
-#define rep(i,n) for(ll i=0;i<(ll)n;++i)
-#define REP(i,n) for(ll i=0;i<=(ll)n;++i)
+#define rep(i,n) for(ll i=0;i<(ll)(n);++i)
+#define REP(i,n) for(ll i=0;i<=(ll)(n);++i)
 #define rrep(i,n) for(ll i=n-1;i>=0;--i)
 #define RREP(i,n) for(ll i=n;i>=0;--i)
 #define hrep(i,b,e) for(ll i=b;(b<e? i<=e:i>=e);(b<e? i++:i--))             //[b,e] or [e,b]の間をforループ
