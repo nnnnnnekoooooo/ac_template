@@ -6,6 +6,7 @@ using namespace atcoder;
 #endif
 using ll = long long;
 using ull = unsigned long long;
+using ld = long double;
 #define Yes cout << "Yes" << "\n"
 #define No cout << "No" << "\n"
 #define YES cout << "YES" << "\n"
