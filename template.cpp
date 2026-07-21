@@ -4,6 +4,10 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 #endif
+#include <boost/multiprecision/cpp_int.hpp>
+namespace multip=boost::multiprecision;
+//using lll = multip::cpp_int;   //no limit
+using lll = multip::int128_t;   //has limit
 using ll = long long;
 using ull = unsigned long long;
 using ld = long double;
