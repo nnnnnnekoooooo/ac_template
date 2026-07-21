@@ -1,0 +1,55 @@
+prep() {
+    # 1. 引数（ディレクトリ名）のチェック
+    if [ -z "$1" ]; then
+        echo "使用法: prep [ディレクトリ名]"
+        return 1
+    fi
+
+    # 2. テンプレートファイルのパス（ここを自分の環境に合わせて書き換えてください）
+    local TEMPLATE_PATH="/home/nnnnnnekoooooo/comp_prog/ac_template/template.cpp"
+
+    if [ ! -f "$TEMPLATE_PATH" ]; then
+        echo "Error: テンプレートファイルが見つかりません ($TEMPLATE_PATH)"
+        return 1
+    fi
+
+    # 3. ディレクトリ作成 & 移動
+    mkdir -p "$1"
+    
+    # 4. ループでコピー
+    for f in {a..f}.cpp; do
+        cp "$TEMPLATE_PATH" "$1/$f"
+    done
+
+    echo "Done! Directory '$1' created with templates."
+    cd "$1" # 作成したディレクトリに自動移動
+}
+
+# テンプレートからファイルを生成する関数
+sprep() {
+    # テンプレートファイルのパス（適宜書き換えてください）
+    local TEMPLATE_PATH="/home/nnnnnnekoooooo/comp_prog/ac_template/template.cpp"
+
+    if [ ! -f "$TEMPLATE_PATH" ]; then
+        echo "Error: テンプレートファイルが見てつかりません ($TEMPLATE_PATH)"
+        return 1
+    fi
+
+    if [ $# -eq 0 ]; then
+        echo "使用法: mkcp [ファイル名1] [ファイル名2] ..."
+        return 1
+    fi
+
+    for f in "$@"; do
+        # 拡張子 .cpp がなければ付与する
+        local filename="${f%.cpp}.cpp"
+        
+        if [ -e "$filename" ]; then
+            echo "Skip: '$filename' は既に存在します"
+        else
+            cp "$TEMPLATE_PATH" "$filename"
+            code "$filename"
+            echo "Created: $filename"
+        fi
+    done
+}
