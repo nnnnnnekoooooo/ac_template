@@ -50,6 +50,17 @@ template<typename T> bool chmax(T& a, T b){if(a < b){a = b; return true;} return
 bool is_out_field(ll i,ll j,ll H,ll W){return (i<0)||(H<=i)||(j<0)||(W<=j);}
 #define ff first
 #define ss second
+template<typename T>
+void read(T &a) {
+    cin >> a;
+}
+template<typename T, typename... Args>
+void read(T &a, Args&... args) {
+    cin >> a;
+    read(args...);
+}
+// letマクロ:宣言 + 一括読み込み
+#define mlet(...) ll __VA_ARGS__; read(__VA_ARGS__)
 
 int main(){
 
