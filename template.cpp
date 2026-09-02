@@ -34,6 +34,7 @@ using ld = long double;
 #define vcall(v) v.begin(),v.end()
 #define vcrall(v) v.rbegin(),v.rend()
 #define pll pair<ll,ll>
+#define pii pair<int,int>
 #define bye(a) do{cout<<a<<el;return 0;}while(0)
 
 const double pi = 3.141592653589793238;
