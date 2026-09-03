@@ -18,6 +18,8 @@ using ld = long double;
 #define YN {cout<<"Yes\n";}else{cout<<"No\n";}
 #define vll vector<ll>
 #define vvll vector<vector<ll>>
+#define vii vector<int>
+#define vvii vector<vector<int>>
 #define el "\n"
 #define rep(i,n) for(ll i=0;i<(ll)(n);++i)
 #define REP(i,n) for(ll i=0;i<=(ll)(n);++i)
