@@ -53,6 +53,10 @@ template<typename T> bool chmax(T& a, T b){if(a < b){a = b; return true;} return
 bool is_out_field(ll i,ll j,ll H,ll W){return (i<0)||(H<=i)||(j<0)||(W<=j);}
 #define ff first
 #define ss second
+#define get(n,p) get<p>(n)
+template<class T> using pq = priority_queue<T, vc<T>>;//大きい順
+template<class T> using pq_g = priority_queue<T, vc<T>, greater<T>>;//小さい順
+#define plll tuple<ll,ll,ll>
 template<typename T>
 void read(T &a) {
     cin >> a;
