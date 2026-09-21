@@ -1,0 +1,97 @@
+#include <bits/stdc++.h>
+using namespace std;
+#if __has_include(<atcoder/all>)
+#include <atcoder/all>
+using namespace atcoder;
+#endif
+#include <boost/multiprecision/cpp_int.hpp>
+namespace multip=boost::multiprecision;
+//using lll = multip::cpp_int;   //no limit
+using lll = multip::int128_t;   //has limit
+using ll = long long;
+using ull = unsigned long long;
+using ld = long double;
+#define Yes cout << "Yes" << "\n"
+#define No cout << "No" << "\n"
+#define YES cout << "YES" << "\n"
+#define NO cout << "NO" << "\n"
+#define YN {cout<<"Yes\n";}else{cout<<"No\n";}
+#define vll vector<ll>
+#define vvll vector<vector<ll>>
+#define vii vector<int>
+#define vvii vector<vector<int>>
+#define el "\n"
+#define rep(i,n) for(ll i=0;i<(ll)(n);++i)
+#define REP(i,n) for(ll i=0;i<=(ll)(n);++i)
+#define rrep(i,n) for(ll i=n-1;i>=0;--i)
+#define RREP(i,n) for(ll i=n;i>=0;--i)
+#define hrep(i,b,e) for(ll i=b;(b<e? i<=e:i>=e);(b<e? i++:i--))             //[b,e] or [e,b]の間をforループ
+#define let(n) ll n;cin>>n
+#define letv(V,n) vll V(n);rep(i,n){cin>>V[i];}
+#define tlet(type,n) type n;cin>>n
+#define extenddigit setprecision(15)
+#define vc vector
+#define str string
+#define printv(V,c) for(auto it=V.begin();it!=V.end();it++){if(next(it)!=V.end())cout<<*it<<c;else cout<<*it;}cout<<el
+#define vcall(v) v.begin(),v.end()
+#define vcrall(v) v.rbegin(),v.rend()
+#define pll pair<ll,ll>
+#define pii pair<int,int>
+#define bye(a) do{cout<<a<<el;return 0;}while(0)
+
+const double pi = 3.141592653589793238;
+const int inf = 1073741823;
+const ll infl = 1LL << 60;
+const string ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const string abc = "abcdefghijklmnopqrstuvwxyz";
+const int dx4[4] = {1,0,-1, 0};
+const int dy4[4] = {0,1, 0,-1};
+const int dx8[8] = {1,1,0,-1,-1,-1, 0, 1};
+const int dy8[8] = {0,1,1, 1, 0,-1,-1,-1};
+template<typename T> bool chmin(T& a, T b){if(a > b){a = b; return true;} return false;}
+template<typename T> bool chmax(T& a, T b){if(a < b){a = b; return true;} return false;}
+bool is_out_field(ll i,ll j,ll H,ll W){return (i<0)||(H<=i)||(j<0)||(W<=j);}
+#define ff first
+#define ss second
+#define get(n,p) get<p>(n)
+template<class T> using pq = priority_queue<T, vc<T>>;//大きい順
+template<class T> using pq_g = priority_queue<T, vc<T>, greater<T>>;//小さい順
+#define plll tuple<ll,ll,ll>
+template<typename T>
+void read(T &a) {
+    cin >> a;
+}
+template<typename T, typename... Args>
+void read(T &a, Args&... args) {
+    cin >> a;
+    read(args...);
+}
+// letマクロ:宣言 + 一括読み込み
+#define mlet(...) ll __VA_ARGS__; read(__VA_ARGS__)
+
+
+//各要素が素数であるかをvc<bool>に格納する(1:素数　0:素数でない)
+vc<bool> primegen(ll N){
+    vc<bool> prime(N,1); 
+
+    prime[0]=prime[1]=0;
+    for(ll i=2;i<prime.size();i++){
+        if(prime[i]){
+            for(ll j=2*i;j<prime.size();j+=i){
+                prime[j]=0;
+            }
+        }
+    }
+
+    return prime;
+}
+
+
+int main(){
+    let(N);
+    vc<bool> p = primegen(N);
+    printv(p," ");
+
+
+    return 0;
+}
