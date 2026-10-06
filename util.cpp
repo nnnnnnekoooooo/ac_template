@@ -86,6 +86,13 @@ vc<bool> primegen(ll N){
     return prime;
 }
 
+//絶対誤差または相対誤差がep以下の時にTrueを返す
+bool errdis(ld submit,ld actual,ld ep=1e-9){
+    return abs(submit-actual)<=ep || abs(submit-actual)<=ep*actual;
+}
+
+
+
 
 int main(){
     let(N);
