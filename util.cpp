@@ -93,6 +93,20 @@ bool errdis(ld submit,ld actual,ld ep=1e-9){
     return abs(submit-actual)<=ep || abs(submit-actual)<=ep*actual;
 }
 
+//文字列に対してランレングス圧縮を行う
+vc<pair<char,ll>> runlength(str S){
+    vc<pair<char,ll>> ret;
+    ret.push_back({S[0],1});
+    rep(i,S.length()-1){
+        if(ret.back().ff==S[i+1]){
+            ret.back().ss++;
+        }else{
+            ret.push_back({S[i+1],1});
+        }
+    }
+    return ret;
+}
+
 
 
 
