@@ -87,6 +87,18 @@ vc<bool> primegen(ll N){
 
     return prime;
 }
+vll primevector(ll N){
+    vc<bool> primeart = primegen(N);
+    vll ret;
+    rep(i,primeart.size()){
+        if(primeart[i]){
+            ret.push_back(i);
+        }
+    }
+    return ret;
+}
+
+
 
 //絶対誤差または相対誤差がep以下の時にTrueを返す
 bool errdis(ld submit,ld actual,ld ep=1e-9){
@@ -107,13 +119,21 @@ vc<pair<char,ll>> runlength(str S){
     return ret;
 }
 
+//a^nをllで求める
+ll lpow(ll a, ll n){
+    ll ret=1;
+    rep(i,n)ret*=a;
+    return ret;
+}
+
 
 
 
 int main(){
     let(N);
-    vc<bool> p = primegen(N);
-    printv(p," ");
+    //vc<bool> p = primegen(N);
+    vll a=primevector(N);
+    printv(a," ");
 
 
     return 0;
