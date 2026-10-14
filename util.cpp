@@ -77,6 +77,9 @@ void read(T &a, Args&... args) {
 //引用元
 //https://www.youtube.com/watch?v=d8fk8psRMeU
 //https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7
+//コードの引用を許可します。
+
+//んんんんんねこおおおおお
 
 
 //各要素が素数であるかをvc<bool>に格納する(1:素数　0:素数でない)
