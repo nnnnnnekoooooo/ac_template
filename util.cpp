@@ -76,6 +76,7 @@ void read(T &a, Args&... args) {
 //https://atcoder.jp/contests/abc001/submissions/80039001
 //引用元
 //https://github.com/atcoder/ac-library
+//https://www.boost.org/
 //https://www.youtube.com/watch?v=d8fk8psRMeU
 //https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7
 //コードの引用を許可します。
