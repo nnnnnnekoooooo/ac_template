@@ -84,6 +84,21 @@ void read(T &a, Args&... args) {
 // letマクロ:宣言 + 一括読み込み
 #define mlet(...) ll __VA_ARGS__; read(__VA_ARGS__)
 
+// n行 × K列 を読み込み、列ごとの vector<ll> を返す
+template<size_t K>
+array<vll,K> read_cols(ll n){
+    array<vll,K> r;
+    for(auto& v : r) v.resize(n);
+    for(ll i=0;i<n;i++) for(size_t j=0;j<K;j++) cin >> r[j][i];
+    return r;
+}
+
+// 引数の個数を数える(最大16個)
+#define MLETV_NARGS_IMPL(_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,N,...) N
+#define MLETV_NARGS(...) MLETV_NARGS_IMPL(__VA_ARGS__,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0)
+
+#define mletv(n, ...) auto [__VA_ARGS__] = read_cols<MLETV_NARGS(__VA_ARGS__)>(n)
+
 //各要素が素数であるかをvc<bool>に格納する(1:素数　0:素数でない)
 vc<bool> primegen(ll N){
     vc<bool> prime(N,1); 
