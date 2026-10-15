@@ -1,3 +1,16 @@
+//テンプレートURL
+//https://github.com/nnnnnnekoooooo/ac_template
+//使用例
+//https://atcoder.jp/contests/abc001/submissions/80039001
+//引用元
+//https://github.com/atcoder/ac-library
+//https://www.boost.org/
+//https://www.youtube.com/watch?v=d8fk8psRMeU
+//https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7
+//コードの引用を許可します。
+
+//んんんんんねこおおおおお
+
 #include <bits/stdc++.h>
 using namespace std;
 #if __has_include(<atcoder/all>)
@@ -70,18 +83,7 @@ void read(T &a, Args&... args) {
 }
 // letマクロ:宣言 + 一括読み込み
 #define mlet(...) ll __VA_ARGS__; read(__VA_ARGS__)
-//テンプレートURL
-//https://github.com/nnnnnnekoooooo/ac_template
-//使用例
-//https://atcoder.jp/contests/abc001/submissions/80039001
-//引用元
-//https://github.com/atcoder/ac-library
-//https://www.boost.org/
-//https://www.youtube.com/watch?v=d8fk8psRMeU
-//https://qiita.com/sorachandu/items/041169d34b9f9b99bcf7
-//コードの引用を許可します。
 
-//んんんんんねこおおおおお
 
 int main(){
 
