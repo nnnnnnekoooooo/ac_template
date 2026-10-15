@@ -96,7 +96,6 @@ array<vll,K> read_cols(ll n){
 // 引数の個数を数える(最大16個)
 #define MLETV_NARGS_IMPL(_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15,_16,N,...) N
 #define MLETV_NARGS(...) MLETV_NARGS_IMPL(__VA_ARGS__,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0)
-
 #define mletv(n, ...) auto [__VA_ARGS__] = read_cols<MLETV_NARGS(__VA_ARGS__)>(n)
 
 //各要素が素数であるかをvc<bool>に格納する(1:素数　0:素数でない)
