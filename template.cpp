@@ -2,6 +2,7 @@
 //https://github.com/nnnnnnekoooooo/ac_template
 //使用例
 //https://atcoder.jp/contests/abc001/submissions/80039001
+//https://atcoder.jp/contests/abc408/submissions/80086061
 //引用元
 //https://github.com/atcoder/ac-library
 //https://www.boost.org/
