@@ -153,6 +153,33 @@ ll lpow(ll a, ll n){
     return ret;
 }
 
+//外積a x bを求める
+ll vcprod(pll a,pll b){
+    return a.ff*b.ss-a.ss*b.ff;
+}
+//点a,bの2点がどちらの偏角が大きいか
+bool dsort(pll a,pll b){
+    return vcprod(a,b)>0;
+}
+//(偏角ソート)vc<pll>を(x,y)のvectorとみなして偏角でのソートを行う[0,2pi)
+vc<pll> degsort(vc<pll>& d){
+    vc<pll> zerotopi,pito2pi;
+    for(auto x:d){
+        if(x.ss>0 ||x.ss==0 &&x.ff>0){
+            zerotopi.push_back(x);
+        }else{
+            pito2pi.push_back(x);
+        }
+    }
+    sort(vcall(zerotopi),dsort);
+    sort(vcall(pito2pi),dsort);
+    vc<pll> ret = zerotopi;
+    for(auto x:pito2pi){
+        ret.push_back(x);
+    }
+    return ret;
+}
+
 
 
 
