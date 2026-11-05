@@ -1,4 +1,4 @@
-//テンプレートURL
+//テンプレートURL(ここが最新盤です)
 //https://github.com/nnnnnnekoooooo/ac_template
 //使用例
 //https://atcoder.jp/contests/abc001/submissions/80039001
