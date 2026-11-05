@@ -180,6 +180,30 @@ vc<pll> degsort(vc<pll>& d){
     return ret;
 }
 
+// A[i] <= n なる最大の i (なければ -1)
+template<typename T>
+ll max_idx_le(const vector<T>& A, const T& n){
+    return (ll)(upper_bound(A.begin(), A.end(), n) - A.begin()) - 1;
+}
+
+// A[i] < n なる最大の i (なければ -1)
+template<typename T>
+ll max_idx_lt(const vector<T>& A, const T& n){
+    return (ll)(lower_bound(A.begin(), A.end(), n) - A.begin()) - 1;
+}
+
+// A[i] >= n なる最小の i (なければ A.size())
+template<typename T>
+ll min_idx_ge(const vector<T>& A, const T& n){
+    return (ll)(lower_bound(A.begin(), A.end(), n) - A.begin());
+}
+
+// A[i] > n なる最小の i (なければ A.size())
+template<typename T>
+ll min_idx_gt(const vector<T>& A, const T& n){
+    return (ll)(upper_bound(A.begin(), A.end(), n) - A.begin());
+}
+
 
 
 
