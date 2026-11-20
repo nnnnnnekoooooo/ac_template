@@ -206,6 +206,53 @@ ll min_idx_gt(const vector<T>& A, const T& n){
 
 
 
+using i128 = __int128;
+mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+// [a, b] の一様乱数 (i128 で受けて LLONG_MIN/MAX にも対応)
+i128 rand_range(i128 a, i128 b){
+    return a + (i128)uniform_int_distribution<unsigned long long>(0, (unsigned long long)(b - a))(rng);
+}
+ll digits_of(i128 x){          // x >= 0
+    ll d = 1;
+    while(x >= 10){ x /= 10; d++; }
+    return d;
+}
+// 絶対値が [lo, hi] (0 <= lo <= hi) で、桁数が d の範囲から一様に選ぶ
+i128 pick_mag(i128 lo, i128 hi, ll d){
+    i128 dlo = 0, dhi = 1;
+    if(d >= 2){ dlo = 1; for(ll i=1;i<d;i++) dlo *= 10; }
+    for(ll i=0;i<d;i++) dhi *= 10;
+    dhi -= 1;
+    return rand_range(max(lo, dlo), min(hi, dhi));
+}
+
+// L以上R以下 (負も可) の対数的にランダムな整数
+ll log_rand(ll L, ll R){
+    assert(L <= R);
+    // 負側: 絶対値 [nlo, nhi],  非負側: [plo, phi]
+    bool hasN = L < 0, hasP = R >= 0;
+    i128 nlo = 0, nhi = 0, plo = 0, phi = 0;
+    ll dnl = 0, dnh = 0, dpl = 0, dph = 0, cn = 0, cp = 0;
+    if(hasN){
+        nlo = (R < 0 ? -(i128)R : 1);
+        nhi = -(i128)L;
+        dnl = digits_of(nlo); dnh = digits_of(nhi);
+        cn = dnh - dnl + 1;
+    }
+    if(hasP){
+        plo = (L >= 0 ? L : 0);
+        phi = R;
+        dpl = digits_of(plo); dph = digits_of(phi);
+        cp = dph - dpl + 1;
+    }
+    // 「符号 × 桁数」の全クラスから一様に選ぶ
+    ll k = (ll)rand_range(0, cn + cp - 1);
+    if(k < cn) return (ll)(-pick_mag(nlo, nhi, dnl + k));
+    return (ll)pick_mag(plo, phi, dpl + (k - cn));
+}
+
+
+
 
 int main(){
     let(N);
